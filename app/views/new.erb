@@ -1,0 +1,17 @@
+<h1>New user form<h1>
+
+<% if @errors %>
+  <span>Something went wrong:</span>
+  <ul class="error-list pad-b-2">
+    <% @errors.each do |error| %>
+      <li class="error-item"><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<form action='/users' method='Post'>
+  <input type='text' name='user[username]' placeholder='Username'><br>
+  <input type='text' name='user[email]' placeholder='Email Address'><br>
+  <input type='password' name='user[password]' placeholder='Password'><br>
+  <input type='submit' value='Register' class=”button”>
+</form>
